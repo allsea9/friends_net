@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= context.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/alchemy/styles/vendor.css" />
+    <link rel="stylesheet" href="/alchemy/alchemy.min.css" />
+    <script src="alchemy/scripts/vendor.js"></script>
+    <script src="alchemy/alchemy.js"></script>
+  </head>
+  <body>
+    <br>
+    <a href="/"> << 처음으로</a>
+    <br>
+
+    <h1>친구지도에서 친구들을 찾아보세요</h1>
+    <div id="alchemy" class="alchemy"></div>
+    <div id="nodesDiv" data-nodes=<%= context.nodes %>></div>
+    <div id="edgesDiv" data-edges=<%= context.edges %>></div>
+    <script>
+      let nodes_str = document.getElementById("nodesDiv").dataset.nodes;
+      let nodes = JSON.parse(nodes_str);
+
+      let edges_str = document.getElementById("edgesDiv").dataset.edges;
+      let edges = JSON.parse(edges_str);
+
+      let friends_data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      alchemy = new Alchemy({
+        dataSource: friends_data,
+        nodeCaptionsOnByDefault: true,
+        nodeCaption: "name"
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= title %>을 사용하려면 학번과 이름을 넣으세요</p>
+    <form action="/list" method="post">
+      <p>학번: <input type="text" name="id" required /></p>
+      <p>이름: <input type="text" name="name" required /></p>
+      <button type="submit">시작하기</button>
+    </form>
+  </body>
+</html>

@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "node ./bin/www & browser-sync start --proxy 'localhost:3000' --files '**/*.css, **/*.ejs, **/*.js'"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
